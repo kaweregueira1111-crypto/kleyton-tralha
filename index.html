@@ -1408,25 +1408,51 @@ still?frame(0):requestAnimationFrame(frame);
     filter: drop-shadow(0 0 8px rgba(250, 204, 21, 0.65)) !important;
   }
 <style>
-  /* ===== BARRA INFERIOR (.sbar) TRANSPARENTE + BOTÃO DOURADO LUXO ===== */
-  .sbar {
+  /* ===== FORÇA BARRA TRANSPARENTE E BOTÃO DOURADO ===== */
+  .spx-bar-glass {
     background: rgba(255, 255, 255, 0.04) !important;
+    background-image: none !important;
     backdrop-filter: blur(14px) !important;
     -webkit-backdrop-filter: blur(14px) !important;
-    border-top: 1px solid rgba(250, 204, 21, 0.25) !important;
+    border-top: 1px solid rgba(250, 204, 21, 0.28) !important;
     box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.45) !important;
   }
 
-  /* Botão JOGAR AGORA em Ouro Luxo */
-  .sbar a, .sbar button, .sbar-btn {
-    background: linear-gradient(135deg, #FFFBEB 0%, #FACC15 45%, #D97706 100%) !important;
+  .spx-btn-gold {
+    background: linear-gradient(135deg, #FFFBEB 0%, #FACC15 48%, #D97706 100%) !important;
+    background-image: linear-gradient(135deg, #FFFBEB 0%, #FACC15 48%, #D97706 100%) !important;
     color: #090601 !important;
+    -webkit-text-fill-color: #090601 !important;
     font-weight: 900 !important;
     border: 1.5px solid #FEF08A !important;
-    box-shadow: 0 6px 20px rgba(250, 204, 21, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+    box-shadow: 0 6px 20px rgba(250, 204, 21, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
     text-shadow: none !important;
   }
 </style>
+
+<script>
+  (function() {
+    // Procura todos os botões/links escritos "JOGAR AGORA" na página
+    var elementos = document.querySelectorAll('a, button');
+    elementos.forEach(function(el) {
+      var texto = (el.textContent || '').trim().toUpperCase();
+      if (texto === 'JOGAR AGORA') {
+        // Verifica se está dentro da barra fixa inferior
+        var pai = el.parentElement;
+        while (pai && pai !== document.body) {
+          var st = window.getComputedStyle(pai);
+          if (st.position === 'fixed' && parseInt(st.bottom, 10) <= 20) {
+            pai.classList.add('spx-bar-glass');
+            el.classList.add('spx-btn-gold');
+            break;
+          }
+          pai = pai.parentElement;
+        }
+      }
+    });
+  })();
+</script>
+
 
 </body>
 </html>
