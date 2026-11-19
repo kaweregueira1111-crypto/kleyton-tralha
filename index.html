@@ -3,23 +3,79 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0d031f">
-<title>THAINA TRALHA</title>
+<meta name="theme-color" content="#040302">
+<title>KLEYTON TRALHA</title>
 <style>
   :root{
-    --gold:#ffd23f;--amber:#ff8a1f;--lilac:#e0b0ff;--purple:#9d4edd;--purple-deep:#3c096c;
+    --gold:#ffd23f;--amber:#ff8a1f;--lilac:#fef08a;--purple:#facc15;--purple-deep:#422006;
     --green:#19b552;--green-bright:#2ee872;
-    --ring:conic-gradient(from 210deg,#ffd23f,#f3d5ff,#e0b0ff,#9d4edd,#e0b0ff,#ffd23f);
+    --ring:conic-gradient(from 210deg,#ffd23f,#fef08a,#ff8a1f,#ca8a04,#ffd23f);
   }
   *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
-  html{
-    min-height:100%;background-color:#0d031f;
-    background: radial-gradient(90% 50% at 50% -8%,rgba(140,45,230,.38),transparent 72%),
-                radial-gradient(60% 40% at 100% 38%,rgba(110,30,190,.28),transparent 70%),
-                radial-gradient(70% 45% at 0% 78%,rgba(85,20,160,.30),transparent 70%),
-                linear-gradient(180deg,#180433 0%,#100324 55%,#090219 100%);
-    background-attachment:fixed;
+
+  /* ===== TEMA VERSÃO PLUS: BLACK GOLD NEBULOSA GALÁCTICA (SPACE-X) ===== */
+  html {
+    min-height: 100%;
+    background-color: #040302;
+    background-image:
+      /* Estrelas brancas e douradas */
+      radial-gradient(1.5px 1.5px at 14% 18%, #FFFBEB, transparent),
+      radial-gradient(2px 2px at 78% 12%, #FDE047, transparent),
+      radial-gradient(1px 1px at 42% 28%, #FFFFFF, transparent),
+      radial-gradient(1.5px 1.5px at 88% 44%, #FACC15, transparent),
+      radial-gradient(1px 1px at 22% 62%, #FFFFFF, transparent),
+      radial-gradient(2px 2px at 66% 74%, #F59E0B, transparent),
+      radial-gradient(1.5px 1.5px at 31% 86%, #FEF08A, transparent),
+      radial-gradient(1px 1px at 82% 91%, #FFFFFF, transparent),
+      /* Nuvens da Nebulosa Dourada & Âmbar */
+      radial-gradient(ellipse 65% 42% at 22% 16%, rgba(234, 179, 8, 0.24) 0%, rgba(161, 98, 7, 0.08) 45%, transparent 75%),
+      radial-gradient(ellipse 70% 48% at 82% 38%, rgba(217, 119, 6, 0.22) 0%, rgba(120, 53, 15, 0.09) 50%, transparent 78%),
+      radial-gradient(ellipse 80% 50% at 45% 75%, rgba(250, 204, 21, 0.18) 0%, rgba(113, 63, 18, 0.07) 48%, transparent 80%),
+      /* Núcleo Galáctico Profundo */
+      radial-gradient(circle at 50% 0%, #1c1406 0%, #090703 58%, #030201 100%);
+    background-attachment: fixed;
   }
+
+  /* Aura cósmica animada pulsando suavemente no fundo */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: -20%;
+    pointer-events: none;
+    z-index: 0;
+    background:
+      radial-gradient(circle at 35% 30%, rgba(250, 204, 21, 0.14), transparent 45%),
+      radial-gradient(circle at 70% 65%, rgba(245, 158, 11, 0.12), transparent 50%);
+    filter: blur(28px);
+    animation: spxNebulaDrift 12s ease-in-out infinite alternate;
+  }
+
+  @keyframes spxNebulaDrift {
+    0%   { transform: translate3d(-2%, -2%, 0) scale(1); opacity: 0.75; }
+    100% { transform: translate3d(2%, 3%, 0) scale(1.08); opacity: 1; }
+  }
+
+  /* Acabamento Ouro Luxo nos detalhes e cards */
+  .underline {
+    background: linear-gradient(90deg, transparent, #FEF08A, #FACC15, #D97706, transparent) !important;
+    box-shadow: 0 0 16px rgba(250, 204, 21, 0.75) !important;
+  }
+  .avatar, .pfp {
+    border: 2.5px solid #FACC15 !important;
+    box-shadow: 0 0 26px rgba(250, 204, 21, 0.45), inset 0 0 12px rgba(250, 204, 21, 0.25) !important;
+  }
+  .plat-box {
+    border-color: rgba(250, 204, 21, 0.28) !important;
+    box-shadow: 0 16px 38px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(254, 240, 138, 0.22) !important;
+  }
+  .plat-btn {
+    border-color: rgba(250, 204, 21, 0.35) !important;
+    background: linear-gradient(135deg, rgba(250, 204, 21, 0.12), rgba(255, 255, 255, 0.04)) !important;
+  }
+  .plat-tag {
+    color: #FDE047 !important;
+  }
+
   body{
     min-height:100%;
     font-family:"Inter","Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
@@ -223,12 +279,12 @@
   <div class="gcard">
     <div class="gpill"><i></i>Verificação rápida</div>
     <div class="gid">
-     <div class="gav"><img id="gAv" src="perfil.jpg" alt="THAINA TRALHA" onerror="this.outerHTML='<b style=\'display:grid;place-items:center;height:100%;color:#ffd23f;font-size:16px\'>TT</b>'"></div>
+     <div class="gav"><img id="gAv" src="perfil.jpg" alt="KLEYTON TRALHA" onerror="this.outerHTML='<b style=\'display:grid;place-items:center;height:100%;color:#ffd23f;font-size:16px\'>TT</b>'"></div>
       <div>
-        <div class="gname"><b>THAINA TRALHA</b>
+        <div class="gname"><b>KLEYTON TRALHA</b>
           <svg viewBox="0 0 24 24" aria-label="Verificado"><circle cx="12" cy="12" r="10" fill="#9d4edd"/><path d="M8 12.2l2.7 2.7L16.2 9" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-        <div class="gh">@thainnatralha</div>
+        <div class="gh">@kleytontralha</div>
       </div>
     </div>
     <button class="hold" id="hold" type="button" aria-label="Segure para entrar">
@@ -249,11 +305,11 @@
   </div>
 </section>
 <main class="page" id="bio" hidden>
- <div class="cover"><img src="capa.jpg" alt="Capa THAINA TRALHA" onerror="this.style.display='none'"></div>
-  <div class="avatar"><div class="inner"><img src="perfil.jpg" alt="THAINA TRALHA" onerror="this.parentElement.innerHTML='TT'"></div><span class="dot"></span></div>
+ <div class="cover"><img src="capa.jpg" alt="Capa KLEYTON TRALHA" onerror="this.style.display='none'"></div>
+  <div class="avatar"><div class="inner"><img src="perfil.jpg" alt="KLEYTON TRALHA" onerror="this.parentElement.innerHTML='TT'"></div><span class="dot"></span></div>
   <div class="pill"><span class="coin">🍀</span><span>quem tem Deus não conta com a sorte</span></div>
   <div class="title">
-    <h1>THAINA TRALHA</h1>
+    <h1>KLEYTON TRALHA</h1>
     <svg class="verified" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#9d4edd"/><path d="M8 12.3l2.7 2.7L16.5 9" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </div>
   <div class="underline"></div>
@@ -468,7 +524,7 @@
 </main>
 <div class="sticky-bar" id="sbar" hidden>
   <div class="sticky-inner">
-    <div class="sticky-brand"><strong>THAINA TRALHA</strong><span>Plataforma verificada · Saque rápido</span></div>
+    <div class="sticky-brand"><strong>KLEYTON TRALHA</strong><span>Plataforma verificada · Saque rápido</span></div>
     <a class="sticky-btn" href="https://22rio35.com/?pid=3786673709&fromPage=AGENCY_CENTER" target="_blank" rel="noopener">JOGAR AGORA</a>
   </div>
 </div>
@@ -701,5 +757,208 @@ still?frame(0):requestAnimationFrame(frame);
     </div>
   </div>
 </div>
+  <!-- Fonte chamativa para o título da notificação -->
+<link href="https://googleapis.com" rel="stylesheet">
+
+<style>
+  /* ===== NOTIFICAÇÃO VIP: CLIENTE PLUS (BLACK & GOLD) ===== */
+  .spx-plus-toast {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%, -140%);
+    opacity: 0;
+    z-index: 99999;
+    width: calc(100% - 32px);
+    max-width: 390px;
+    padding: 14px 16px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    /* Vidro escuro translúcido com brilho dourado */
+    background: linear-gradient(135deg, rgba(18, 14, 6, 0.94), rgba(8, 6, 3, 0.97));
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1.5px solid rgba(250, 204, 21, 0.55);
+    box-shadow:
+      0 18px 40px rgba(0, 0, 0, 0.75),
+      0 0 24px rgba(250, 204, 21, 0.22),
+      inset 0 1px 0 rgba(254, 240, 138, 0.35);
+
+    pointer-events: none;
+    transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.45s ease;
+    box-sizing: border-box;
+  }
+
+  .spx-plus-toast.show {
+    transform: translate(-50%, 0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Reflexo dourado passando na borda */
+  .spx-plus-toast::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background: linear-gradient(105deg, transparent 35%, rgba(254, 240, 138, 0.25) 50%, transparent 65%) 150% 0 / 300% 100% no-repeat;
+    animation: spxPlusShine 3.2s ease-in-out infinite;
+  }
+  @keyframes spxPlusShine {
+    0% { background-position: 150% 0; }
+    55%, 100% { background-position: -50% 0; }
+  }
+
+  /* Medalha esquerda com estrela */
+  .spx-plus-badge {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    flex: none;
+    display: grid;
+    place-items: center;
+    background: radial-gradient(circle at 30% 25%, #422006, #140a02 85%);
+    border: 1px solid rgba(250, 204, 21, 0.5);
+    box-shadow: 0 0 15px rgba(250, 204, 21, 0.25);
+  }
+  .spx-plus-badge svg {
+    width: 24px;
+    height: 24px;
+    filter: drop-shadow(0 0 6px rgba(250, 204, 21, 0.7));
+  }
+
+  /* Textos da notificação */
+  .spx-plus-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .spx-plus-title {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Cinzel', serif;
+    font-size: 14.5px;
+    font-weight: 900;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #FEF08A 0%, #FACC15 50%, #F59E0B 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.2;
+  }
+
+  .spx-plus-star {
+    flex: none;
+    width: 16px;
+    height: 16px;
+    fill: #FACC15;
+    filter: drop-shadow(0 0 6px rgba(250, 204, 21, 0.85));
+  }
+
+  /* Tags de informações abaixo */
+  .spx-plus-tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5px;
+    margin-top: 5px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(255, 251, 235, 0.88);
+  }
+
+  .spx-plus-tags span {
+    background: rgba(250, 204, 21, 0.12);
+    border: 1px solid rgba(250, 204, 21, 0.25);
+    padding: 2px 7px;
+    border-radius: 99px;
+    white-space: nowrap;
+  }
+
+  /* Botão fechar discreto */
+  .spx-plus-close {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    flex: none;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+  }
+</style>
+
+<!-- Estrutura da Notificação -->
+<div class="spx-plus-toast" id="spxPlusToast" role="status" aria-live="polite">
+  <div class="spx-plus-badge" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none">
+      <path d="M12 2L14.9 8.6L22 9.3L16.6 14L18.2 21L12 17.3L5.8 21L7.4 14L2 9.3L9.1 8.6L12 2Z" fill="#FACC15" stroke="#FEF08A" stroke-width="1.2"/>
+    </svg>
+  </div>
+
+  <div class="spx-plus-info">
+    <div class="spx-plus-title">
+      <span>Este é um cliente Plus!</span>
+      <svg class="spx-plus-star" viewBox="0 0 24 24">
+        <path d="M12 2L14.9 8.6L22 9.3L16.6 14L18.2 21L12 17.3L5.8 21L7.4 14L2 9.3L9.1 8.6L12 2Z"/>
+      </svg>
+    </div>
+
+    <div class="spx-plus-tags">
+      <span>Artista</span>
+      <span>Os Tralhas Originais</span>
+      <span>Influenciador +4M</span>
+    </div>
+  </div>
+
+  <button class="spx-plus-close" type="button" aria-label="Fechar" onclick="document.getElementById('spxPlusToast').classList.remove('show')">✕</button>
+</div>
+
+<script>
+  (function() {
+    var toast = document.getElementById('spxPlusToast');
+    if (!toast) return;
+
+    function dispararNotificacao() {
+      if (toast.dataset.shown) return;
+      toast.dataset.shown = '1';
+      setTimeout(function() {
+        toast.classList.add('show');
+        // Fica na tela por 7 segundos e recolhe suavemente
+        setTimeout(function() {
+          toast.classList.remove('show');
+        }, 7000);
+      }, 450);
+    }
+
+    // Verifica se existe alguma tela de verificação/gate bloqueando a página
+    var checarLiberacao = setInterval(function() {
+      var gate = document.querySelector('[id*="gate" i], [class*="gate" i], [id*="verify" i], [class*="verify" i], [id*="bio" i], [class*="bio" i]');
+      var bloqueado = false;
+
+      if (gate) {
+        var estilo = window.getComputedStyle(gate);
+        if (estilo.display !== 'none' && estilo.visibility !== 'hidden' && estilo.opacity !== '0') {
+          bloqueado = true;
+        }
+      }
+
+      if (!bloqueado) {
+        clearInterval(checarLiberacao);
+        dispararNotificacao();
+      }
+    }, 300);
+  })();
+</script>
+
 </body>
 </html>
