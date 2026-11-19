@@ -3,78 +3,83 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#040302">
+<meta name="theme-color" content="#03050a">
 <title>KLEYTON TRALHA</title>
 <style>
   :root{
-    --gold:#ffd23f;--amber:#ff8a1f;--lilac:#fef08a;--purple:#facc15;--purple-deep:#422006;
+    --gold:#ffd23f;--amber:#ff8a1f;--lilac:#fef08a;--purple:#facc15;--purple-deep:#090d16;
     --green:#19b552;--green-bright:#2ee872;
-    --ring:conic-gradient(from 210deg,#ffd23f,#fef08a,#ff8a1f,#ca8a04,#ffd23f);
+    --ring:conic-gradient(from 210deg,#ffd23f,#fef08a,#d97706,#fef08a,#ffd23f);
   }
   *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 
-  /* ===== TEMA VERSÃO PLUS: BLACK GOLD NEBULOSA GALÁCTICA (SPACE-X) ===== */
+  /* ===== FUNDO: PRETO PROFUNDO AZULADO + ESTRELAS HD + DETALHES OURO ===== */
   html {
     min-height: 100%;
-    background-color: #040302;
+    background-color: #020307;
     background-image:
-      /* Estrelas brancas e douradas */
-      radial-gradient(1.5px 1.5px at 14% 18%, #FFFBEB, transparent),
-      radial-gradient(2px 2px at 78% 12%, #FDE047, transparent),
-      radial-gradient(1px 1px at 42% 28%, #FFFFFF, transparent),
-      radial-gradient(1.5px 1.5px at 88% 44%, #FACC15, transparent),
-      radial-gradient(1px 1px at 22% 62%, #FFFFFF, transparent),
-      radial-gradient(2px 2px at 66% 74%, #F59E0B, transparent),
-      radial-gradient(1.5px 1.5px at 31% 86%, #FEF08A, transparent),
-      radial-gradient(1px 1px at 82% 91%, #FFFFFF, transparent),
-      /* Nuvens da Nebulosa Dourada & Âmbar */
-      radial-gradient(ellipse 65% 42% at 22% 16%, rgba(234, 179, 8, 0.24) 0%, rgba(161, 98, 7, 0.08) 45%, transparent 75%),
-      radial-gradient(ellipse 70% 48% at 82% 38%, rgba(217, 119, 6, 0.22) 0%, rgba(120, 53, 15, 0.09) 50%, transparent 78%),
-      radial-gradient(ellipse 80% 50% at 45% 75%, rgba(250, 204, 21, 0.18) 0%, rgba(113, 63, 18, 0.07) 48%, transparent 80%),
-      /* Núcleo Galáctico Profundo */
-      radial-gradient(circle at 50% 0%, #1c1406 0%, #090703 58%, #030201 100%);
+      /* Estrelas nítidas de alta qualidade */
+      radial-gradient(1.2px 1.2px at 12% 14%, #FFFFFF, transparent),
+      radial-gradient(1.8px 1.8px at 28% 8%, #FEF08A, transparent),
+      radial-gradient(1px 1px at 45% 22%, #E2E8F0, transparent),
+      radial-gradient(2px 2px at 74% 16%, #FACC15, transparent),
+      radial-gradient(1.2px 1.2px at 89% 29%, #FFFFFF, transparent),
+      radial-gradient(1.5px 1.5px at 19% 46%, #FDE047, transparent),
+      radial-gradient(1px 1px at 63% 41%, #FFFFFF, transparent),
+      radial-gradient(1.8px 1.8px at 84% 58%, #FEF08A, transparent),
+      radial-gradient(1.2px 1.2px at 34% 68%, #FFFFFF, transparent),
+      radial-gradient(2px 2px at 52% 82%, #FACC15, transparent),
+      radial-gradient(1px 1px at 15% 88%, #E2E8F0, transparent),
+      radial-gradient(1.5px 1.5px at 79% 92%, #FFFFFF, transparent),
+      /* Nebulosa sutil preto-azulada com toque dourado no topo */
+      radial-gradient(ellipse 65% 38% at 50% 6%, rgba(250, 204, 21, 0.11) 0%, transparent 70%),
+      radial-gradient(ellipse 80% 55% at 20% 45%, rgba(12, 24, 48, 0.55) 0%, transparent 75%),
+      radial-gradient(ellipse 80% 55% at 85% 75%, rgba(10, 20, 42, 0.5) 0%, transparent 75%),
+      linear-gradient(180deg, #060a14 0%, #03050a 48%, #010204 100%);
     background-attachment: fixed;
   }
 
-  /* Aura cósmica animada pulsando suavemente no fundo */
-  body::before {
-    content: "";
-    position: fixed;
-    inset: -20%;
-    pointer-events: none;
-    z-index: 0;
-    background:
-      radial-gradient(circle at 35% 30%, rgba(250, 204, 21, 0.14), transparent 45%),
-      radial-gradient(circle at 70% 65%, rgba(245, 158, 11, 0.12), transparent 50%);
-    filter: blur(28px);
-    animation: spxNebulaDrift 12s ease-in-out infinite alternate;
+  /* Foto de capa maior e com mais presença */
+  .cover {
+    height: 310px !important;
+    max-height: none !important;
+    border-radius: 22px !important;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(250, 204, 21, 0.22) !important;
+  }
+  .cover img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center 20% !important;
   }
 
-  @keyframes spxNebulaDrift {
-    0%   { transform: translate3d(-2%, -2%, 0) scale(1); opacity: 0.75; }
-    100% { transform: translate3d(2%, 3%, 0) scale(1.08); opacity: 1; }
+  /* Tira o brilho roxo antigo e deixa tudo Ouro & Preto */
+  h1, .title {
+    text-shadow: 0 4px 18px rgba(250, 204, 21, 0.45), 0 2px 4px rgba(0, 0, 0, 0.9) !important;
   }
-
-  /* Acabamento Ouro Luxo nos detalhes e cards */
   .underline {
     background: linear-gradient(90deg, transparent, #FEF08A, #FACC15, #D97706, transparent) !important;
-    box-shadow: 0 0 16px rgba(250, 204, 21, 0.75) !important;
+    box-shadow: 0 0 14px rgba(250, 204, 21, 0.7) !important;
   }
-  .avatar, .pfp {
-    border: 2.5px solid #FACC15 !important;
-    box-shadow: 0 0 26px rgba(250, 204, 21, 0.45), inset 0 0 12px rgba(250, 204, 21, 0.25) !important;
+  .bio, .quote, .pill {
+    border-color: rgba(250, 204, 21, 0.35) !important;
+    box-shadow: 0 0 18px rgba(250, 204, 21, 0.12) !important;
   }
   .plat-box {
+    background: rgba(8, 12, 22, 0.65) !important;
     border-color: rgba(250, 204, 21, 0.28) !important;
-    box-shadow: 0 16px 38px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(254, 240, 138, 0.22) !important;
   }
-  .plat-btn {
-    border-color: rgba(250, 204, 21, 0.35) !important;
-    background: linear-gradient(135deg, rgba(250, 204, 21, 0.12), rgba(255, 255, 255, 0.04)) !important;
+  .plat-tag { color: #FDE047 !important; }
+  .sbar {
+    background: rgba(4, 6, 12, 0.92) !important;
+    border-top: 1px solid rgba(250, 204, 21, 0.25) !important;
   }
-  .plat-tag {
-    color: #FDE047 !important;
+  .sbar a, .sbar button {
+    background: linear-gradient(90deg, #FDE047, #F59E0B) !important;
+    color: #090601 !important;
+    box-shadow: 0 0 20px rgba(250, 204, 21, 0.4) !important;
   }
+
 
   body{
     min-height:100%;
