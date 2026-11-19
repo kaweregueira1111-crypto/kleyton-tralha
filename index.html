@@ -772,85 +772,113 @@ still?frame(0):requestAnimationFrame(frame);
     </div>
   </div>
 </div>
-  <!-- Fonte chamativa para o título da notificação -->
 <link href="https://googleapis.com" rel="stylesheet">
 
 <style>
-  /* ===== NOTIFICAÇÃO VIP: CLIENTE PLUS (BLACK & GOLD) ===== */
+  /* ===== NOTIFICAÇÃO VIP: CHEGADA CINEMATOGRÁFICA + ESTRELA 3D + 5s ===== */
   .spx-plus-toast {
     position: fixed;
     top: 20px;
     left: 50%;
-    transform: translate(-50%, -140%);
+    transform: perspective(800px) translate3d(-50%, -160%, 0) rotateX(28deg) scale(0.82);
     opacity: 0;
     z-index: 99999;
-    width: calc(100% - 32px);
-    max-width: 390px;
-    padding: 14px 16px;
+    width: calc(100% - 28px);
+    max-width: 396px;
+    padding: 14px 15px;
     border-radius: 20px;
     display: flex;
     align-items: center;
     gap: 13px;
 
-    /* Vidro escuro translúcido com brilho dourado */
-    background: linear-gradient(135deg, rgba(18, 14, 6, 0.94), rgba(8, 6, 3, 0.97));
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border: 1.5px solid rgba(250, 204, 21, 0.55);
+    background: linear-gradient(135deg, rgba(11, 14, 24, 0.96), rgba(4, 6, 11, 0.99));
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1.5px solid rgba(250, 204, 21, 0.65);
     box-shadow:
-      0 18px 40px rgba(0, 0, 0, 0.75),
-      0 0 24px rgba(250, 204, 21, 0.22),
-      inset 0 1px 0 rgba(254, 240, 138, 0.35);
+      0 24px 52px rgba(0, 0, 0, 0.88),
+      0 0 32px rgba(250, 204, 21, 0.28),
+      inset 0 1px 0 rgba(254, 240, 138, 0.45);
 
     pointer-events: none;
-    transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.45s ease;
+    transition: transform 0.75s cubic-bezier(0.18, 1.35, 0.32, 1), opacity 0.4s ease;
     box-sizing: border-box;
+    overflow: hidden;
   }
 
   .spx-plus-toast.show {
-    transform: translate(-50%, 0);
+    transform: perspective(800px) translate3d(-50%, 0, 0) rotateX(0deg) scale(1);
     opacity: 1;
     pointer-events: auto;
+    animation: spxAuraPulse 1.4s ease-out;
   }
 
-  /* Reflexo dourado passando na borda */
+  @keyframes spxAuraPulse {
+    0%   { box-shadow: 0 24px 52px rgba(0,0,0,0.88), 0 0 0 rgba(250,204,21,0); }
+    45%  { box-shadow: 0 24px 52px rgba(0,0,0,0.88), 0 0 42px rgba(250,204,21,0.55), inset 0 1px 0 rgba(254,240,138,0.7); }
+    100% { box-shadow: 0 24px 52px rgba(0,0,0,0.88), 0 0 28px rgba(250,204,21,0.28), inset 0 1px 0 rgba(254,240,138,0.45); }
+  }
+
+  /* Feixe de luz varrendo o card na chegada */
   .spx-plus-toast::after {
     content: "";
     position: absolute;
     inset: 0;
-    border-radius: inherit;
     pointer-events: none;
-    background: linear-gradient(105deg, transparent 35%, rgba(254, 240, 138, 0.25) 50%, transparent 65%) 150% 0 / 300% 100% no-repeat;
-    animation: spxPlusShine 3.2s ease-in-out infinite;
+    background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.32) 50%, transparent 70%);
+    transform: translateX(-140%);
   }
-  @keyframes spxPlusShine {
-    0% { background-position: 150% 0; }
-    55%, 100% { background-position: -50% 0; }
+  .spx-plus-toast.show::after {
+    animation: spxToastSweep 1.6s 0.35s ease-out forwards;
+  }
+  @keyframes spxToastSweep {
+    to { transform: translateX(140%); }
   }
 
-  /* Medalha esquerda com estrela */
+  /* Barra regressiva de 5 segundos */
+  .spx-plus-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background: linear-gradient(90deg, #B45309, #FACC15, #FFFBEB);
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+  .spx-plus-toast.show .spx-plus-bar {
+    animation: spxTimer5s 5s linear forwards;
+  }
+  @keyframes spxTimer5s {
+    from { transform: scaleX(1); }
+    to   { transform: scaleX(0); }
+  }
+
+  /* Medalha com Estrela 3D Lapidada */
   .spx-plus-badge {
-    width: 44px;
-    height: 44px;
-    border-radius: 14px;
+    position: relative;
+    width: 48px;
+    height: 48px;
+    border-radius: 15px;
     flex: none;
     display: grid;
     place-items: center;
-    background: radial-gradient(circle at 30% 25%, #422006, #140a02 85%);
-    border: 1px solid rgba(250, 204, 21, 0.5);
-    box-shadow: 0 0 15px rgba(250, 204, 21, 0.25);
+    background: radial-gradient(circle at 30% 25%, #422006, #090b12 85%);
+    border: 1.5px solid rgba(250, 204, 21, 0.6);
+    box-shadow: 0 0 18px rgba(250, 204, 21, 0.32), inset 0 0 10px rgba(250, 204, 21, 0.2);
   }
   .spx-plus-badge svg {
-    width: 24px;
-    height: 24px;
-    filter: drop-shadow(0 0 6px rgba(250, 204, 21, 0.7));
+    width: 32px;
+    height: 32px;
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 8px rgba(250, 204, 21, 0.65));
+    animation: spxStarFloat 2.8s ease-in-out infinite alternate;
+  }
+  @keyframes spxStarFloat {
+    from { transform: scale(0.95) rotate(-4deg); }
+    to   { transform: scale(1.06) rotate(4deg); }
   }
 
-  /* Textos da notificação */
-  .spx-plus-info {
-    flex: 1;
-    min-width: 0;
-  }
+  .spx-plus-info { flex: 1; min-width: 0; }
 
   .spx-plus-title {
     display: flex;
@@ -861,50 +889,47 @@ still?frame(0):requestAnimationFrame(frame);
     font-weight: 900;
     letter-spacing: 0.4px;
     text-transform: uppercase;
-    background: linear-gradient(90deg, #FEF08A 0%, #FACC15 50%, #F59E0B 100%);
+    background: linear-gradient(90deg, #FFFBEB 0%, #FACC15 48%, #F59E0B 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     line-height: 1.2;
   }
 
-  .spx-plus-star {
+  .spx-plus-star-mini {
     flex: none;
     width: 16px;
     height: 16px;
-    fill: #FACC15;
-    filter: drop-shadow(0 0 6px rgba(250, 204, 21, 0.85));
+    filter: drop-shadow(0 0 6px rgba(250, 204, 21, 0.9));
   }
 
-  /* Tags de informações abaixo */
   .spx-plus-tags {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 5px;
-    margin-top: 5px;
+    margin-top: 6px;
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 11px;
     font-weight: 600;
-    color: rgba(255, 251, 235, 0.88);
+    color: rgba(255, 251, 235, 0.92);
   }
 
   .spx-plus-tags span {
-    background: rgba(250, 204, 21, 0.12);
-    border: 1px solid rgba(250, 204, 21, 0.25);
-    padding: 2px 7px;
+    background: rgba(250, 204, 21, 0.13);
+    border: 1px solid rgba(250, 204, 21, 0.3);
+    padding: 2px 8px;
     border-radius: 99px;
     white-space: nowrap;
   }
 
-  /* Botão fechar discreto */
   .spx-plus-close {
     width: 26px;
     height: 26px;
     border-radius: 50%;
     flex: none;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.16);
     background: rgba(255, 255, 255, 0.06);
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.78);
     font-size: 12px;
     cursor: pointer;
     display: grid;
@@ -912,19 +937,33 @@ still?frame(0):requestAnimationFrame(frame);
   }
 </style>
 
-<!-- Estrutura da Notificação -->
 <div class="spx-plus-toast" id="spxPlusToast" role="status" aria-live="polite">
+  <!-- Medalha Esquerda com Estrela 3D Facetada -->
   <div class="spx-plus-badge" aria-hidden="true">
-    <svg viewBox="0 0 24 24" fill="none">
-      <path d="M12 2L14.9 8.6L22 9.3L16.6 14L18.2 21L12 17.3L5.8 21L7.4 14L2 9.3L9.1 8.6L12 2Z" fill="#FACC15" stroke="#FEF08A" stroke-width="1.2"/>
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://w3.org">
+      <!-- Brilho estelar fino ao fundo -->
+      <path d="M32 2L34.5 29.5L62 32L34.5 34.5L32 62L29.5 34.5L2 32L29.5 29.5L32 2Z" fill="#FEF08A" opacity="0.45"/>
+      <!-- Faces da Estrela 3D Lapidada -->
+      <polygon points="32,8 38.5,24.5 32,32" fill="#FFFBEB"/>
+      <polygon points="32,8 25.5,24.5 32,32" fill="#FDE047"/>
+      <polygon points="56,25.5 38.5,24.5 32,32" fill="#FACC15"/>
+      <polygon points="56,25.5 42.5,37 32,32" fill="#D97706"/>
+      <polygon points="47,53 42.5,37 32,32" fill="#B45309"/>
+      <polygon points="47,53 32,43.5 32,32" fill="#F59E0B"/>
+      <polygon points="17,53 32,43.5 32,32" fill="#92400E"/>
+      <polygon points="17,53 21.5,37 32,32" fill="#D97706"/>
+      <polygon points="8,25.5 21.5,37 32,32" fill="#FACC15"/>
+      <polygon points="8,25.5 25.5,24.5 32,32" fill="#FEF08A"/>
     </svg>
   </div>
 
   <div class="spx-plus-info">
     <div class="spx-plus-title">
       <span>Este é um cliente Plus!</span>
-      <svg class="spx-plus-star" viewBox="0 0 24 24">
-        <path d="M12 2L14.9 8.6L22 9.3L16.6 14L18.2 21L12 17.3L5.8 21L7.4 14L2 9.3L9.1 8.6L12 2Z"/>
+      <!-- Mini Estrela Facetada ao lado do título -->
+      <svg class="spx-plus-star-mini" viewBox="0 0 64 64" fill="none">
+        <polygon points="32,6 39,24 58,25 43,38 48,56 32,46 16,56 21,38 6,25 25,24" fill="#FACC15" stroke="#FFFBEB" stroke-width="2"/>
+        <polygon points="32,6 39,24 32,33" fill="#FFFBEB"/>
       </svg>
     </div>
 
@@ -936,6 +975,7 @@ still?frame(0):requestAnimationFrame(frame);
   </div>
 
   <button class="spx-plus-close" type="button" aria-label="Fechar" onclick="document.getElementById('spxPlusToast').classList.remove('show')">✕</button>
+  <div class="spx-plus-bar"></div>
 </div>
 
 <script>
@@ -948,14 +988,13 @@ still?frame(0):requestAnimationFrame(frame);
       toast.dataset.shown = '1';
       setTimeout(function() {
         toast.classList.add('show');
-        // Fica na tela por 7 segundos e recolhe suavemente
+        // Fecha automaticamente aos 5 segundos
         setTimeout(function() {
           toast.classList.remove('show');
-        }, 7000);
-      }, 450);
+        }, 5000);
+      }, 300);
     }
 
-    // Verifica se existe alguma tela de verificação/gate bloqueando a página
     var checarLiberacao = setInterval(function() {
       var gate = document.querySelector('[id*="gate" i], [class*="gate" i], [id*="verify" i], [class*="verify" i], [id*="bio" i], [class*="bio" i]');
       var bloqueado = false;
@@ -971,9 +1010,10 @@ still?frame(0):requestAnimationFrame(frame);
         clearInterval(checarLiberacao);
         dispararNotificacao();
       }
-    }, 300);
+    }, 250);
   })();
 </script>
+
 <style>
   /* ===== BRASÃO MEDALHÃO VIP COM LOUROS, COROA E REFLEXO ===== */
   .spx-avatar-wrap {
