@@ -445,6 +445,146 @@
         </svg>
       </span>
     </div>
+     <div class="plat-brand">
+      <!-- TROQUE PELO NOME DA SEGUNDA IMAGEM -->
+      <img class="plat-logo" src="plataforma2.png" alt="Logo da Plataforma 2">
+    </div>
+
+    <!-- TROQUE PELO LINK DA SEGUNDA PLATAFORMA -->
+    <a class="plat-btn" href="COLOQUE_O_SEGUNDO_LINK_AQUI" target="_blank" rel="noopener">
+      <span class="plat-play" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+      </span>
+      <span class="plat-btn-txt">
+        <strong>JOGAR AGORA</strong>
+        <small>Clique aqui para acessar a plataforma</small>
+      </span>
+      <span class="plat-arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7 17L17 7M7 7h10v10"/>
+        </svg>
+      </span>
+    </a>
+  </div>
+<style>
+  /* ===== CARD SPOTIFY DISCRETO E COMPACTO (UNIVERSAL) ===== */
+  .spx-spotify-card {
+    position: relative;
+    width: 100%;
+    margin: 14px auto;
+    padding: 10px 14px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #FFFFFF;
+
+    /* Fundo quase transparente (casa com qualquer tema) */
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+
+    overflow: hidden;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, sans-serif;
+    transition: transform 0.18s ease, background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .spx-spotify-card:hover {
+    background: rgba(29, 185, 84, 0.08);
+    border-color: rgba(29, 185, 84, 0.45);
+  }
+
+  .spx-spotify-card:active {
+    transform: translateY(2px);
+  }
+
+  /* Ícone Spotify Compacto */
+  .spx-spotify-ico {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    flex: none;
+    display: grid;
+    place-items: center;
+    background: rgba(29, 185, 84, 0.14);
+    border: 1px solid rgba(29, 185, 84, 0.35);
+  }
+
+  .spx-spotify-ico svg {
+    width: 20px;
+    height: 20px;
+    fill: #1DB954;
+  }
+
+  /* Textos em linha única/compacta */
+  .spx-spotify-txt {
+    flex: 1;
+    min-width: 0;
+    text-align: left;
+  }
+
+  .spx-spotify-txt strong {
+    display: block;
+    font-size: 13.5px;
+    font-weight: 800;
+    color: #FFFFFF;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .spx-spotify-txt small {
+    display: block;
+    font-size: 11px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.72);
+    margin-top: 2px;
+  }
+
+  /* Botãozinho discreto na direita */
+  .spx-spotify-go {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    flex: none;
+    display: grid;
+    place-items: center;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .spx-spotify-go svg {
+    width: 14px;
+    height: 14px;
+    stroke: currentColor;
+  }
+</style>
+
+<!-- TROQUE O # PELO LINK DO PERFIL DO ARTISTA NO SPOTIFY -->
+<a class="spx-spotify-card" href="COLOQUE_O_LINK_DO_SPOTIFY_AQUI" target="_blank" rel="noopener">
+  <span class="spx-spotify-ico" aria-hidden="true">
+    <svg viewBox="0 0 24 24">
+      <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+    </svg>
+  </span>
+
+  <span class="spx-spotify-txt">
+    <strong>Fique por dentro dos lançamentos</strong>
+    <small>Ouça agora no Spotify oficial</small>
+  </span>
+
+  <span class="spx-spotify-go" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M7 17L17 7M7 7h10v10"/>
+    </svg>
+  </span>
+</a>
 
   <section class="rtp-section">
     <div class="rtp-kicker"><span class="live-dot"></span><span>EXPLORE OS JOGOS</span></div>
